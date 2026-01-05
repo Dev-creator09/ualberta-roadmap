@@ -1,0 +1,204 @@
+// University Course Roadmap System Schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================================
+// COURSE MANAGEMENT
+// ============================================================================
+
+model Course {
+  id                   String   @id @default(cuid())
+  code                 String   @unique // e.g., "CMPUT 174"
+  title                String
+  credits              Int      @default(3)
+  description          String?  @db.Text
+  prerequisiteFormula  Json?    @db.JsonB // Nested AND/OR logic: {type: "AND", conditions: [...]}
+  typicallyOffered     String[] // ["Fall", "Winter", "Spring"]
+  level                CourseLevel
+  subject              String   // CMPUT, MATH, STAT, etc.
+  createdAt            DateTime @default(now())
+  updatedAt            DateTime @updatedAt
+
+  // Relations
+  roadmapCourses       RoadmapCourse[]
+  requirementCourses   Requirement[]   @relation("RequirementCourses")
+
+  @@index([code])
+  @@index([subject])
+  @@index([level])
+  @@map("courses")
+}
+
+enum CourseLevel {
+  LEVEL_100 @map("100")
+  LEVEL_200 @map("200")
+  LEVEL_300 @map("300")
+  LEVEL_400 @map("400")
+  LEVEL_500 @map("500")
+}
+
+// ============================================================================
+// PROGRAM MANAGEMENT
+// ============================================================================
+
+model Program {
+  id            String   @id @default(cuid())
+  code          String   @unique // e.g., "honors-cs", "honors-ai"
+  name          String
+  totalCredits  Int      @default(120)
+  requirements  Json?    @db.JsonB // General requirement rules
+  specialRules  Json?    @db.JsonB // Exclusions, substitutions, etc.
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  programRequirements Requirement[]
+  roadmaps            Roadmap[]
+  students            Student[]
+
+  @@index([code])
+  @@map("programs")
+}
+
+model Requirement {
+  id              String            @id @default(cuid())
+  programId       String
+  name            String            // e.g., "Core CS Courses"
+  requirementType RequirementType
+  courses         String[]          // Course codes
+  creditsNeeded   Int?              // Minimum credits needed
+  chooseCount     Int?              // For choice type: how many courses to choose
+  levelFilter     String[]          // e.g., ["300", "400"]
+  subjectFilter   String?           // e.g., "CMPUT"
+  orderIndex      Int               @default(0) // For display ordering
+
+  // Relations
+  program         Program @relation(fields: [programId], references: [id], onDelete: Cascade)
+  coursesRelation Course[] @relation("RequirementCourses")
+
+  @@index([programId])
+  @@index([requirementType])
+  @@map("requirements")
+}
+
+enum RequirementType {
+  REQUIRED         // Must take all listed courses
+  CHOICE           // Choose N courses from list
+  LEVEL_REQUIREMENT // Must take X credits at level Y in subject Z
+  ELECTIVE         // Free electives
+}
+
+// ============================================================================
+// STUDENT MANAGEMENT
+// ============================================================================
+
+model Student {
+  id             String   @id @default(cuid())
+  name           String
+  email          String   @unique
+  startingYear   Int
+  programCode    String
+  specialization String?  // e.g., "AI", "Games", "Software Practice"
+  createdAt      DateTime @default(now())
+
+  // Relations
+  program  Program   @relation(fields: [programCode], references: [code])
+  roadmaps Roadmap[]
+
+  @@index([email])
+  @@index([programCode])
+  @@map("students")
+}
+
+// ============================================================================
+// ROADMAP MANAGEMENT
+// ============================================================================
+
+model Roadmap {
+  id          String   @id @default(cuid())
+  studentId   String
+  programId   String
+  name        String   // e.g., "My 4-Year Plan", "Fast Track Plan"
+  isActive    Boolean  @default(true)
+  generatedAt DateTime @default(now())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  student        Student         @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  program        Program         @relation(fields: [programId], references: [id])
+  roadmapCourses RoadmapCourse[]
+
+  @@index([studentId])
+  @@index([programId])
+  @@index([isActive])
+  @@map("roadmaps")
+}
+
+model RoadmapCourse {
+  id                     String       @id @default(cuid())
+  roadmapId              String
+  courseCode             String       // Denormalized for flexibility
+  semester               Int          // 1-8 (or more for extended programs)
+  year                   Int          // Academic year (1, 2, 3, 4)
+  term                   Term
+  status                 CourseStatus @default(PLANNED)
+  satisfiesRequirements  String[]     // Array of requirement IDs this course fulfills
+  createdAt              DateTime     @default(now())
+
+  // Relations
+  roadmap Roadmap @relation(fields: [roadmapId], references: [id], onDelete: Cascade)
+  course  Course  @relation(fields: [courseCode], references: [code])
+
+  @@index([roadmapId])
+  @@index([courseCode])
+  @@index([status])
+  @@index([term])
+  @@map("roadmap_courses")
+}
+
+enum Term {
+  FALL
+  WINTER
+  SPRING
+  SUMMER
+}
+
+enum CourseStatus {
+  PLANNED
+  IN_PROGRESS
+  COMPLETED
+  DROPPED
+  WAITLISTED
+}
+
+// ============================================================================
+// ADDITIONAL UTILITY MODELS
+// ============================================================================
+
+// Track user accounts (future: authentication)
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String
+  password  String   // Hashed
+  role      UserRole @default(STUDENT)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@map("users")
+}
+
+enum UserRole {
+  STUDENT
+  ADVISOR
+  ADMIN
+}

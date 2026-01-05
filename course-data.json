@@ -1,0 +1,958 @@
+{
+  "courses": [
+    {
+      "code": "CMPUT 101",
+      "title": "Introduction to Computing",
+      "credits": 3,
+      "description": "An introduction to fundamental concepts in computation, including state, abstraction, generalization, and representation. Introduction to algorithms, logic, number systems, circuits, and other topics in elementary computing science.",
+      "prerequisites": [],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 174",
+      "title": "Introduction to the Foundations of Computation I",
+      "credits": 3,
+      "description": "CMPUT 174 and 175 use a problem-driven approach to introduce the fundamental ideas of Computing Science. Emphasis is on the underlying process behind the solution, independent of programming language or style. Basic notions of state, control flow, data structures, recursion, modularization, and testing are introduced through solving simple problems in a variety of domains such as text analysis, map navigation, game search, simulation, and cryptography. Students learn to program by reading and modifying existing programs as well as writing new ones. No prior programming experience is necessary.",
+      "prerequisites": [],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 175",
+      "title": "Introduction to the Foundations of Computation II",
+      "credits": 3,
+      "description": "A continuation of CMPUT 174, revisiting topics of greater depth and complexity. More sophisticated notions such as objects, functional programming, and Abstract Data Types are explored. Various algorithms, including popular searching and sorting algorithms, are studied and compared in terms of time and space efficiency. Upon completion of this two course sequence, students from any discipline should be able to build programs to solve basic problems in their area, and will be prepared to take more advanced Computing Science courses.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 174", "SCI 100"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 191",
+      "title": "Introduction to Data Science",
+      "credits": 3,
+      "description": "Introduction to data acquisition, basic data manipulation (cleaning, outlier detection), analysis (regression, clustering, classification), basic statistics and machine learning tools, information visualization to communicate information from data.",
+      "prerequisites": [],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 195",
+      "title": "Introduction to Principles and Techniques of Data Science",
+      "credits": 3,
+      "description": "This course introduces data science to students with prior computing experience. It covers the basics of data acquisition, manipulation, transformation, and cleaning, as well as data analysis (e.g., regression, clustering, classification) and visualization. Students learn principles and techniques of efficient data-driven communication and decision-making in various domains using industry-standard tools.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 174", "CMPUT 274"]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 200",
+      "title": "Ethics of Data Science and Artificial Intelligence",
+      "credits": 3,
+      "description": "This course focuses on ethics issues in Artificial Intelligence (AI) and Data Science (DS). The main themes are privacy, fairness/bias, and explainability in DS. The objectives are to learn how to identify and measure these aspects in outputs of algorithms, and how to build algorithms that correct for these issues. The course will follow a case-studies based approach, where we will examine these aspects by considering real-world case studies for each of these ethics issues. The concepts will be introduced through a humanities perspective by using case studies with an emphasis on a technical treatment including implementation work.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 191", "CMPUT 195"]
+            },
+            {
+              "type": "AND",
+              "courses": [
+                {
+                  "type": "OR",
+                  "courses": ["CMPUT 174", "CMPUT 274"]
+                },
+                {
+                  "type": "OR",
+                  "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181", "CMPUT 267"]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 201",
+      "title": "Practical Programming Methodology",
+      "credits": 3,
+      "description": "Introduction to the principles, methods, tools, and practices of the professional programmer. The lectures focus on the fundamental principles of software engineering based on abstract data types and their implementations. The laboratories offer an intensive apprenticeship to the aspiring software developer. Students use C and software development tools of the Unix environment.",
+      "prerequisites": ["CMPUT 175"],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 204",
+      "title": "Algorithms I",
+      "credits": 3,
+      "description": "The first of two courses on algorithm design and analysis, with emphasis on fundamentals of searching, sorting, and graph algorithms. Examples include divide and conquer, dynamic programming, greedy methods, backtracking, and local search methods, together with analysis techniques to estimate program efficiency.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 175", "CMPUT 275"]
+            },
+            "CMPUT 272",
+            {
+              "type": "OR",
+              "courses": ["MATH 100", "MATH 114", "MATH 117", "MATH 134", "MATH 144", "MATH 154"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 206",
+      "title": "Introduction to Digital Image Processing",
+      "credits": 3,
+      "description": "An introduction to basic digital image processing theory, and the tools that make advanced image manipulation possible for ordinary users. Image processing is important in many applications: editing and processing photographs, special effects for movies, drawing animated characters starting with photographs, analyzing and enhancing remote imagery, and detecting suspects from surveillance cameras. Image processing building blocks and fundamental algorithms of image processing operations are introduced using Python libraries.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 101", "CMPUT 174", "CMPUT 274"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 100", "MATH 114", "MATH 117", "MATH 134", "MATH 144", "MATH 154"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 229",
+      "title": "Computer Organization and Architecture I",
+      "credits": 3,
+      "description": "Number representation, computer architecture and organization, instruction-set architecture, assembly-level programming, procedures, stack frames, memory access through pointers, exception handling, computer arithmetic, floating-point representation, datapath, control logic, pipelining, memory hierarchy, virtual memory.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 201", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 250",
+      "title": "Computers and Games",
+      "credits": 3,
+      "description": "An interdisciplinary course for students in Science, Arts, and other faculties. The focus is on games as interactive entertainment, their role in society, and how they are made. Teams composed of students with diverse backgrounds (e.g. English, Art and Design, and Computing Science) follow the entire creative process: from concept, through pitch, to delivery, of a short narrative-based game using a commercial game engine. To achieve the required mix of backgrounds and experience, students must apply to be considered for this course.",
+      "prerequisites": [],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 256",
+      "title": "Game Artificial Intelligence",
+      "credits": 3,
+      "description": "The purpose of this course is for students to gain a breadth of understanding of the AI approaches employed in digital games. This involves learning basic topics covered in other AI courses as they apply to digital games and more specialized game AI topics. Assignments will involve programming Game AI algorithms across a variety of areas including pathfinding, decision making, and data science.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 174", "CMPUT 274"]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 261",
+      "title": "Introduction to Artificial Intelligence",
+      "credits": 3,
+      "description": "Introduction to artificial intelligence focusing on techniques for building intelligent software systems and agents. Topics include search and problem-solving techniques, knowledge representation and reasoning, reasoning and acting under uncertainty, machine learning and neural networks.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "corequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 204", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 267",
+      "title": "Machine Learning I",
+      "credits": 3,
+      "description": "This course introduces the fundamental statistical, mathematical, and computational concepts in analyzing data. The goal for this introductory course is to provide a solid foundation in the mathematics of machine learning, in preparation for more advanced machine learning concepts. The course focuses on univariate models, to 64simplify some of the mathematics and emphasize some of the underlying concepts in machine learning, including: how should one think about data, how can data be summarized, how models can be estimated from data, what sound estimation principles look like, how generalization is achieved, and how to evaluate the performance of learned models.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 174", "CMPUT 274"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 100", "MATH 114", "MATH 117", "MATH 134", "MATH 144", "MATH 154"]
+            }
+          ]
+        }
+      ],
+      "corequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 175", "CMPUT 275"]
+            },
+            "CMPUT 272",
+            {
+              "type": "OR",
+              "courses": ["MATH 102", "MATH 125", "MATH 127"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 272",
+      "title": "Formal Systems and Logic in Computing Science",
+      "credits": 3,
+      "description": "An introduction to the tools of set theory, logic, and induction, and their use in the practice of reasoning about algorithms and programs. Basic set theory; the notion of a function; counting; propositional and predicate logic and their proof systems; inductive definitions and proofs by induction; program specification and correctness.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 101", "CMPUT 174", "CMPUT 175", "CMPUT 274", "SCI 100", "ENCMP 100"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 274",
+      "title": "Introduction to Tangible Computing I",
+      "credits": 3,
+      "description": "This is part 1 of a 2 sequence intensive problem-based introduction to Computing Science. In part 1, the key concepts of procedural programming, basic algorithm design and analysis (lists, queues, trees, sorting, searching) are learned by solving a series of problems using Python. Development is done using the Linux operating system.",
+      "prerequisites": [],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 275",
+      "title": "Introduction to Tangible Computing II",
+      "credits": 3,
+      "description": "This is part 2 of a 2 sequence intensive introduction to Computing Science. Part 2 expands to add object-oriented programming, with C++, and more complex algorithms and data structures such as shortest paths in graphs; divide and conquer and dynamic programming; client-server style computing; and recursion.",
+      "prerequisites": ["CMPUT 274"],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 291",
+      "title": "Introduction to File and Database Management",
+      "credits": 3,
+      "description": "Basic concepts in computer data organization and information processing; entity-relationship model; relational model; SQL and other relational query languages; storage architecture; physical organization of data; access methods for relational data. Programming experience (e.g., Python) is required for the course project.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 175", "CMPUT 274"]
+            },
+            "CMPUT 272"
+          ]
+        }
+      ],
+      "corequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 201", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 300",
+      "title": "Computers and Society",
+      "credits": 3,
+      "description": "Social, ethical, professional, economic, and legal issues in the development and deployment of computer technology in society.",
+      "prerequisites": [],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 301",
+      "title": "Introduction to Software Engineering",
+      "credits": 3,
+      "description": "Object-oriented design and analysis, with interactive applications as the primary example. Topics include: software process; revision control; Unified Modeling Language (UML); requirements; software architecture, design patterns, frameworks, design guidelines; unit testing; refactoring; software tools.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 201", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 302",
+      "title": "Introduction to Human Computer Interaction",
+      "credits": 3,
+      "description": "A complementary course to introductory software engineering focused on a user-centered approach to software design. The main themes are how humans interact with physical and information environments, and how to design software with human's information needs and their cognitive capacities in mind. Topics include the user-centered design cycle, and evaluation methods for discovering usability problems in interface design.",
+      "prerequisites": ["CMPUT 301"],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 303",
+      "title": "Algorithmics in Practice",
+      "credits": 3,
+      "description": "This course is focused on algorithmic problems, where a solution involves properly understanding a written description, designing an efficient algorithm to solve the problem, and then correctly implementing the solution. Students will use previous knowledge in algorithms, data structures, and mathematical reasoning to solve problems in addition to learning new algorithms and data structures. Lectures are shared with CMPUT 403.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            "CMPUT 204"
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 304",
+      "title": "Algorithms II",
+      "credits": 3,
+      "description": "The second course of a two-course sequence on algorithm design. Emphasis on principles of algorithm design. Categories of algorithms such as divide-and-conquer, greedy algorithms, dynamic programming; analysis of algorithms; limits of algorithm design; NP-completeness; heuristic algorithms.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 204",
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 225", "MATH 227", "MATH 228"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 307",
+      "title": "3D Modeling and Animation",
+      "credits": 3,
+      "description": "An introductory course on the theory and applications of computer based 3D modeling and animation. The course will cover a selection of topics from overview of tools supporting modeling and animation, automatically generating 3D models, and animation of skeleton based models through algorithms and software. Applications of 3D modeling and animation in games, virtual/augmented environments, movies, and emerging video transmission algorithms will be discussed.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": [
+            "CMPUT 206",
+            {
+              "type": "AND",
+              "courses": [
+                "CMPUT 204",
+                {
+                  "type": "OR",
+                  "courses": ["MATH 225", "MATH 227"]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 312",
+      "title": "Introduction to Robotics and Mechatronics",
+      "credits": 3,
+      "description": "Algorithms and software paradigms for robot programming; mathematical modeling of robot arms and rovers including kinematics, and an introduction to dynamics and control; sensors, motors and their modeling; basics of image processing and machine vision; vision-guided motion control.",
+      "prerequisites": ["CMPUT 275"],
+      "corequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 340", "CMPUT 418", "ECE 240"]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 313",
+      "title": "Computer Networks",
+      "credits": 3,
+      "description": "Introduction to computer communication networks; protocols for error and flow control; wired and wireless medium access protocols; routing and congestion control; internet architecture and protocols; multimedia transmission; recent advances in networking.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "AND",
+              "courses": [
+                "CMPUT 201",
+                "CMPUT 204"
+              ]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 325",
+      "title": "Non-Procedural Programming Languages",
+      "credits": 3,
+      "description": "A study of the theory, run-time structure, and implementation of selected non-procedural programming languages. Languages will be selected from the domains of functional, and logic-based languages.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "AND",
+              "courses": [
+                "CMPUT 201",
+                "CMPUT 204"
+              ]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 102", "MATH 125", "MATH 127"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 328",
+      "title": "Visual Recognition",
+      "credits": 3,
+      "description": "Introduction to visual recognition to recognize objects and classify scenes or images automatically by a computer. Supervised and unsupervised machine learning principles and deep learning techniques will be utilized for visual recognition. Successful commercial systems based on visual recognition range from entertainment to serious scientific research: face detection and recognition on personal devices, social media.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 175", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 100", "MATH 114", "MATH 117", "MATH 134", "MATH 144", "MATH 154"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 102", "MATH 125", "MATH 127"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 331",
+      "title": "Computational Cryptography",
+      "credits": 3,
+      "description": "Cryptography is the science of secure communications. This course is an introduction to computational methods for encrypting and deciphering messages, with an emphasis on computer implementation.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            "CMPUT 272"
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 333",
+      "title": "Security in a Networked World",
+      "credits": 3,
+      "description": "Introduction to the concepts and components involved in secure, networked, systems. The concepts of confidentiality, integrity, availability; shared and public key cryptography; authentication protocols; third-party authentication services; key agreement protocols; strong password protocols; digital signature schemes; non-repudiation; certificate authorities; random number generation; proof-of-work; network protocol and network services vulnerabilities; firewalls; malicious code; computer viruses and worms; intrusion detection.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 201", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 340",
+      "title": "Introduction to Numerical Methods",
+      "credits": 3,
+      "description": "Computer arithmetic and errors. The study of computational methods for solving problems in linear algebra, non-linear equations, optimization, interpolation and approximation, and integration. This course will provide a basic foundation in numerical methods that supports further study in machine learning; computer graphics, vision and multimedia; robotics; and other topics in Science and Engineering.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 204", "CMPUT 275"]
+            },
+            "MATH 214",
+            {
+              "type": "OR",
+              "courses": ["MATH 102", "MATH 125", "MATH 127"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 225", "MATH 227"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 350",
+      "title": "Advanced Games Programming",
+      "credits": 3,
+      "description": "This course focuses on state-of-the-art AI and graphics programming for video games. Part 1 introduces C++, the language of choice for video game engines, emphasizing efficiency, safety, the Standard Template Library, and OpenGL. Part 2 on real time strategy deals with efficient pathfinding algorithms, planning, and scripting AI systems. Student projects give hands-on experience directly applicable to the video games industry.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            "CMPUT 204"
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 355",
+      "title": "Games, Puzzles, Algorithms",
+      "credits": 3,
+      "description": "An introduction to algorithms and theory behind computer programs that solve puzzles (mazes, peg solitaire, etc.) or play games (chess, Go, Hex, etc.). This course is intended for a general audience.",
+      "prerequisites": [],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 361",
+      "title": "Introduction to Information Retrieval",
+      "credits": 3,
+      "description": "Introduction to information retrieval focusing on algorithms and data structures for organizing and searching through large collections of documents, and techniques for evaluating the quality of search results. Topics include boolean retrieval, keyword and phrase queries, ranking, index optimization, practical machine-learning algorithms for text, and optimizations used by Web search engines.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 201",
+            "CMPUT 204"
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 365",
+      "title": "Introduction to Reinforcement Learning",
+      "credits": 3,
+      "description": "This course provides an introduction to reinforcement learning, which focuses on the study and design of learning agents that interact with a complex, uncertain world to achieve a goal. The course will cover multi-armed bandits, Markov decision processes, reinforcement learning, planning, and function approximation (online supervised learning). The course will take an information-processing approach to the study of intelligence and briefly touch on perspectives from psychology, neuroscience, and philosophy. The course will use the University of Alberta MOOC on Reinforcement Learning.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 175", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 267", "CMPUT 466", "STAT 265"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 366",
+      "title": "Search and Planning in Artificial Intelligence",
+      "credits": 3,
+      "description": "This course provides an introduction to search and planning in artificial intelligence. The course covers deterministic single-agent and multi-agent problems. Students will learn how to model real-world problems as state-space search problems and how to solve such problems. The course covers algorithms for solving deterministic shortest path problems with factored and non-factored states, combinatorial optimization problems, constraint satisfaction problems, and multi-agent problems.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 204", "CMPUT 275"]
+            },
+            "CMPUT 272"
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 379",
+      "title": "Operating System Concepts",
+      "credits": 3,
+      "description": "Introduction to the structure, components, and concepts behind modern general-purpose operating systems. Processes: process state transitions; operations on processes; interrupt processing; multiprocessor considerations; resource allocation; synchronization; critical sections and events; semaphores; deadlock: avoidance, detection, and recovery; memory management; virtual memory; paging and segmentation; page replacement strategies; working sets; demand paging; process scheduling; scheduling algorithms; file system functions; file organization; space allocation; virtual machines.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "AND",
+              "courses": [
+                "CMPUT 201",
+                "CMPUT 204"
+              ]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 382",
+      "title": "Introduction to GPU Programming",
+      "credits": 3,
+      "description": "Graphics processing units (GPU) can be programmed like a coprocessor to solve non-graphics problems, including voice recognition, computational physics, convolutional neural networks, and machine learning. The many processing cores of a GPU support a high-degree of parallelism. Course topics include hardware architecture, algorithmic design, programming languages (e.g., CUDA, OpenCL), and principles of programming for GPUs for high performance.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 401",
+      "title": "Software Process and Product Management",
+      "credits": 3,
+      "description": "All phases of software development are reviewed from a process perspective. Best practices in software project and product development and management are introduced. Architectural and technological impacts on management. Group projects require specification and initial design or redesign of a software system.",
+      "prerequisites": ["CMPUT 301"],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 402",
+      "title": "Software Quality",
+      "credits": 3,
+      "description": "Software quality issues are covered. Various types of software testing, ranging from unit testing to integration testing are discussed. Processes to ensure quality, such as reviews and continuous integration, are introduced. State-of-the-art software quality tools that analyze different artifacts within the software lifecycle are described.",
+      "prerequisites": ["CMPUT 301"],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 403",
+      "title": "Algorithmics in Competitive Programming",
+      "credits": 3,
+      "description": "This course is focused on algorithmic problems that can be solved within at most several hours by well-prepared people, where a solution involves properly understanding a written description, designing an efficient algorithm to solve the problem, and then correctly implementing the solution. Students will use algorithms, data structures, and mathematical reasoning to solve problems. Lectures are shared with CMPUT 303. CMPUT 403 covers additional material relevant to advanced programming contests.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            "CMPUT 204"
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 404",
+      "title": "Web Applications and Architecture",
+      "credits": 3,
+      "description": "Introduction to modern web architecture, from user-facing applications to machine-facing web-services. Topics include: the evolution of the Internet, relevant technologies and protocols, the architecture of modern web-based information systems, web data exchange and serialization, and service-oriented middleware.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 291",
+            "CMPUT 301"
+          ]
+        }
+      ],
+      "typically_offered": ["Fall", "Winter"]
+    },
+    {
+      "code": "CMPUT 412",
+      "title": "Experimental Mobile Robotics",
+      "credits": 3,
+      "description": "A project-based course dealing with the design and implementation of mobile robots to accomplish specific tasks. Students work in groups and are introduced to concepts in sensor technologies, sensor data processing, motion control based on feedback and real-time programming.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "AND",
+              "courses": [
+                "CMPUT 201",
+                "CMPUT 204"
+              ]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 340", "CMPUT 418"]
+            },
+            "MATH 214"
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 414",
+      "title": "Introduction to Multimedia Technology",
+      "credits": 3,
+      "description": "Introduction to basic principles and algorithms used in multimedia systems. Students obtain hands-on experience in issues relating to multimedia data representation, compression, processing, and animation. Topics will be selected from image and video coding and transmission, animation, human perceptual issues associated to multimedia technologies.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 307", "CMPUT 328", "CMPUT 411"]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 415",
+      "title": "Compiler Design",
+      "credits": 3,
+      "description": "Compilers, interpreters, lexical analysis, syntax analysis, syntax-directed translation, symbol tables, type checking, flow analysis, code generation, code optimization.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 428",
+      "title": "Computer Vision",
+      "credits": 3,
+      "description": "Introduction to the geometry and photometry of the 3D to 2D image formation process for the purpose of computing scene properties from camera images. Computing and analyzing motion in image sequences. Recognition of objects (what) and spatial relationships (where) from images and tracking of these in video sequences.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 340", "CMPUT 418", "ECE 240"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 101", "MATH 115", "MATH 118", "MATH 136", "MATH 146", "MATH 156"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 102", "MATH 125", "MATH 127"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 429",
+      "title": "Computer Systems and Architecture",
+      "credits": 3,
+      "description": "A discussion of computer system design concepts with stress on modern ideas that have shaped the high-performance architecture of contemporary systems. Instruction sets, pipelining, instruction-level parallelism, register reuse, branch prediction, CPU control, cache-coherence, accelerators, and related concepts. Memory technologies, caches, I/O, high-performance networks.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 201", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["CMPUT 229", "E E 380", "ECE 212"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 455",
+      "title": "Search, Knowledge and Simulation",
+      "credits": 3,
+      "description": "When making decisions in games, computers rely on three main ideas: search, knowledge and simulations. Knowledge can be created by machine learning techniques and encoded in deep neural networks. Search and simulations help to understand the short and long-term consequences of possible actions. This course leads from basic concepts to state-of-the-art decision-making algorithms.",
+      "prerequisites": [],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 461",
+      "title": "Introduction to Natural Language Processing",
+      "credits": 3,
+      "description": "Natural language processing (NLP) is a subfield of artificial intelligence concerned with the interactions between computers and human languages. This course is an introduction to NLP, with the emphasis on writing programs to process and analyze texts, covering both foundational aspects and applications of NLP. The course aims at a balance between classical and statistical methods for NLP, including methods based on machine learning.",
+      "prerequisites": [
+        {
+          "type": "OR",
+          "courses": ["CMPUT 201", "CMPUT 275"]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 466",
+      "title": "Machine Learning Essentials",
+      "credits": 3,
+      "description": "Learning is essential for many real-world tasks, including recognition, diagnosis, forecasting and data-mining. This course provides a broad overview of topics in machine learning, from foundational methods for regression, classification and dimensionality reduction to more complex modeling with neural networks. It will also provide the formal foundations for understanding when learning is possible and practical. This single course is an alternative to the more in-depth two-course sequence on machine learning with CMPUT 267 and 467.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            {
+              "type": "OR",
+              "courses": ["CMPUT 204", "CMPUT 275"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 125", "MATH 127"]
+            },
+            {
+              "type": "OR",
+              "courses": ["MATH 115", "MATH 118", "MATH 136", "MATH 146", "MATH 156"]
+            },
+            {
+              "type": "OR",
+              "courses": ["STAT 141", "STAT 151", "STAT 161", "STAT 181", "STAT 235", "STAT 265", "SCI 151", "MATH 181"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Fall"]
+    },
+    {
+      "code": "CMPUT 467",
+      "title": "Machine Learning II",
+      "credits": 3,
+      "description": "This is the second course of a two-course sequence on machine learning, with a focus on extending to nonlinear modeling with neural networks and higher-dimensional data. Topics include: optimization approaches (constrained optimization, hessians, matrix solutions), deep learning and neural networks, generative models, more advanced methods for assessing generalization (cross-validation, bootstrapping), introduction to non-iid data and missing data.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 204",
+            "CMPUT 267",
+            {
+              "type": "OR",
+              "courses": ["MATH 101", "MATH 115", "MATH 118", "MATH 136", "MATH 146", "MATH 156"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 469",
+      "title": "Artificial Intelligence Capstone",
+      "credits": 3,
+      "description": "Students will experience the challenges, and rewards, of working in a team to address a real-world task, related to artificial intelligence or machine learning. This will involve first identifying the task itself, then iteratively addressing relevant issues (typically with feedback from a domain expert), leading to an implementation and culminating in evaluating that system. Students will also learn about best practices in organizing team projects, as well as important information about effective communication.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 267",
+            "CMPUT 365",
+            "CMPUT 366"
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 474",
+      "title": "Formal Languages, Automata, and Computability",
+      "credits": 3,
+      "description": "Formal grammars; relationship between grammars and automata; regular expressions; finite state machines; pushdown automata; Turing machines; computability; the halting problem; time and space complexity.",
+      "prerequisites": [
+        {
+          "type": "AND",
+          "courses": [
+            "CMPUT 204",
+            {
+              "type": "OR",
+              "courses": ["MATH 225", "MATH 227", "MATH 228"]
+            }
+          ]
+        }
+      ],
+      "typically_offered": ["Winter"]
+    },
+    {
+      "code": "CMPUT 481",
+      "title": "Parallel and Distributed Systems",
+      "credits": 3,
+      "description": "This course provides an undergraduate-level introduction to parallel programming, parallel and distributed systems, and high-performance computing in science and engineering. Both shared-memory parallel computers and distributed-memory multi computers (e.g., clusters) will be studied. Aspects of the practice of, and (some) research issues in, parallelism will be covered. There will be an emphasis on thread programming, data-parallel programming, and performance evaluation.",
+      "prerequisites": ["CMPUT 379"],
+      "typically_offered": ["Fall", "Winter"]
+    }
+  ]
+}
